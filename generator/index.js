@@ -12,10 +12,17 @@ module.exports = (api, options) => {
     },
     vue: {
       pluginOptions: {
-        hello: 'hello'
+        demoPlugin: {
+          userName: options.userName
+        }
       }
+    },
+    scripts: {
+      'test': 'vue-cli-service foo'
     }
   })
 
-  api.render('./template/')
+  api.render('./template', {
+    userName: options.userName
+  })
 }

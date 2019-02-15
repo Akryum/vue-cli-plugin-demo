@@ -8,14 +8,13 @@ module.exports = (api, options) => {
   // TODO GUI Integration here
   api.describeTask({
     match: /vue-cli-service foo/,
-    description: `That's a prettttttyy long description`,
+    description: 'I am doing dumb things do not try me',
     link: 'https://vuejs.org',
     prompts: [
       {
         name: 'bar',
         type: 'confirm',
-        message: 'Enable bar',
-        default: false
+        message: 'Enable bar'
       }
     ],
     onBeforeRun: ({ answers, args }) => {

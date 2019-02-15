@@ -7,10 +7,11 @@
 module.exports = (api, options) => {
   // TODO our service plugin here
   api.registerCommand('foo', {
-    '--bar': 'Thats a pretty argument'
+    '--bar': 'I am an argument'
   }, (args) => {
-    console.log('Foo was called!', args)
-
-    console.log('env', process.env.FOO, process.env.BAR)
+    console.log('Foo was called')
+    if (args.bar) {
+      console.log('Bar is there')
+    }
   })
 }
