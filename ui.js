@@ -9,6 +9,17 @@ module.exports = (api, options) => {
   api.describeTask({
     match: /vue-cli-service foo/,
     description: `That's a prettttttyy long description`,
-    link: 'https://vuejs.org'
+    link: 'https://vuejs.org',
+    prompts: [
+      {
+        name: 'bar',
+        type: 'confirm',
+        message: 'Enable bar',
+        default: false
+      }
+    ],
+    onBeforeRun: ({ answers, args }) => {
+      if (answers.bar) args.push('--bar')
+    }
   })
 }
